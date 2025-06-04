@@ -91,18 +91,18 @@ export const MyGems = () => {
   {myGems.map((gem, index) => (
         <li
           key={index}
-          className="flex desktop:flex-row mobile:flex-col gap-x-4 w-full desktop:items-center mobile:items-start justify-between"
+          className="desktop:grid desktop:grid-cols-4 mobile:flex  mobile:flex-col w-[90%] desktop:items-center mobile:items-start mobile:justify-between"
         >
           <span className="flex flex-row items-center">
             {index + 1}.
             <Image
-              className="w-20 h-20 rounded-full"
+              className="w-20 h-20 rounded-full object-cover"
               src={gem.imageUrl ? gem.imageUrl : "/gem-icon.jpg"}
             />
             <Text>{gem.name}</Text>
           </span>
 
-          <Text>{gem.symbol}</Text>
+          <Text className="mobile:mt-4">{gem.symbol}</Text>
           <Text>{gem.decimals}</Text>
           <Text>{gem.contractAddress}</Text>
         </li>
